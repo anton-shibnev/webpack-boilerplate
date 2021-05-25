@@ -1,0 +1,4 @@
+.logo {
+  @include svg-icon(100px, 21px);
+  display: block;
+}

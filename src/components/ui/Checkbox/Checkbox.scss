@@ -1,0 +1,78 @@
+$checkbox: (
+  border-width: 1px,
+  border-plus: 1,
+  border-color: $white,
+  icon-color: $white,
+  gap: 10px,
+  wh: 12px,
+  svg-wh: 4px,
+  border-radius: 0,
+  danger-color: tomato,
+);
+
+.checkbox {
+  $this: &;
+  $border-width: map-get($checkbox, border-width);
+  $border-color: map-get($checkbox, border-color);
+  $icon-color: map-get($checkbox, icon-color);
+  $gap: map-get($checkbox, gap);
+  $wh: map-get($checkbox, wh);
+  $svg-wh: map-get($checkbox, svg-wh);
+  $border-radius: map-get($checkbox, border-radius);
+  $border-plus: map-get($checkbox, border-plus);
+
+  position: relative;
+
+  &__input {
+    @include hide;
+
+    &:checked {
+      + #{$this}__label {
+        color: $primary;
+
+        #{$this}__box {
+          box-shadow: inset 0 0 0 $border-width $primary;
+        }
+
+        #{$this}__box-icon {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
+    align-items: center;
+    grid-gap: $gap;
+    cursor: pointer;
+    justify-content: start;
+
+    // &:hover {
+    //   #{$this}__box {
+    //     box-shadow: inset 0 0 0 #{$border-width + $border-plus} $border-color;
+    //   }
+    // }
+  }
+
+  &__box {
+    @include trs(box-shadow);
+    @include wh($wh);
+
+    position: relative;
+    border-radius: $border-radius;
+    box-shadow: inset 0 0 0 $border-width $border-color;
+  }
+
+  &__box-icon {
+    @include circle($svg-wh);
+    @include abs-center;
+    @include trs(transform);
+    background-color: $primary;
+
+    transform: translate(-50%, -50%) scale(0);
+  }
+}

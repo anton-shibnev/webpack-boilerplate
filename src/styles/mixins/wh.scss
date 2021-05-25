@@ -1,0 +1,24 @@
+@mixin wh($width, $height: $width) {
+  height: rem($height);
+  width: rem($width);
+}
+
+@mixin wh-arr($arr) {
+  @each $bp-name, $val in $arr {
+    @if ($bp-name == 'mob') {
+      @include wh($val...);
+    } @else {
+      @media #{mq($bp-name)} {
+        @include wh($val...);
+      }
+    }
+  }
+}
+
+// @mixin height($arr) {
+//   @include _(height, $arr, true);
+// }
+
+// @mixin width($arr) {
+//   @include _(width, $arr, true);
+// }

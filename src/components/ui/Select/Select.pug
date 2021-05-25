@@ -1,0 +1,16 @@
+include /components/ui/Icon/Icon
+
+mixin Select(props)
+  .select&attributes(attributes)
+    .select__label #{ props.label }
+    .select__wrap
+      .select__trigger
+        span #{ props.list[0].text }
+        .select__arrow
+          +Icon('arrow-down')
+      .select__options
+        each item, i in props.list
+          span.select__option(
+              data-value=item.value
+              class=`${i === 0 ? 'selected' : ''}`
+            ) #{ item.text }

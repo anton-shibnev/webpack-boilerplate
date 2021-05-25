@@ -1,0 +1,77 @@
+@mixin wider-init($m) {
+  @include _(
+    (
+      margin-left: -
+        (
+          $m,
+        ),
+      margin-right: -
+        (
+          $m,
+        ),
+      width: calc(100% + (#{$m} * 2)),
+    )
+  );
+}
+
+@mixin wider($n) {
+  @if type-of($n) == 'map' {
+    @each $bp-name, $val in $n {
+      @if ($bp-name == 'mob') {
+        @include wider-init($val);
+      } @else {
+        @media #{mq($bp-name)} {
+          @include wider-init($val);
+        }
+      }
+    }
+  } @else if($n == false) {
+    margin-left: 0;
+    margin-right: 0;
+
+    width: auto;
+  } @else {
+    @include wider-init($n);
+  }
+}
+
+@mixin p-wider($n) {
+  @if type-of($n) == 'map' {
+    @each $bp-name, $val in $n {
+      @if ($bp-name == 'mob') {
+        @include wider-init($val);
+        @include _(
+          (
+            padding-left: $val,
+            padding-right: $val,
+          )
+        );
+      } @else {
+        @media #{mq($bp-name)} {
+          @include wider-init($val);
+          @include _(
+            (
+              padding-left: $val,
+              padding-right: $val,
+            )
+          );
+        }
+      }
+    }
+  } @else if($n == false) {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  } @else {
+    @include wider-init($n);
+
+    @include _(
+      (
+        padding-left: $n,
+        padding-right: $n,
+      )
+    );
+  }
+}

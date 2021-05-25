@@ -1,0 +1,7 @@
+extends /components/layout/layout
+include /components/sections/Hero/Hero
+
+block content
+  +Hero(DATA.hero)
+
+  script(src='./src/pages/index/index.js' type='module') 

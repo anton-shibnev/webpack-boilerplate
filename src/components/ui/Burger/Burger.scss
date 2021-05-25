@@ -1,0 +1,68 @@
+.burger {
+  $this: &;
+  @extend %btn-reset;
+
+  @include hover;
+  @include wh-arr(
+    (
+      'mob': 20px 16px,
+      'xs': 36px 28px,
+    )
+  );
+
+  @include _(
+    (
+      grid-gap: (
+        'mob': 4px,
+        'xs': 8.52px,
+      ),
+      display: grid,
+      position: relative,
+      z-index: 120,
+    )
+  );
+
+  &--active {
+    #{$this}__line {
+      width: 100% !important;
+
+      &:nth-child(1) {
+        transform: rotate(-135deg) translate(-15%, -300%);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(135deg) translate(-15%, 300%);
+      }
+    }
+  }
+
+  &__line {
+    @include _(
+      (
+        transition: #{background-color $trs,
+        opacity $trs,
+        transform $trs,
+        width $trs},
+        background-color: $white,
+        display: block,
+        width: 100%,
+        height: (
+          'mob': 2px,
+          'xs': 3.65px,
+        ),
+      )
+    );
+
+    &:nth-child(2) {
+      width: 80%;
+    }
+
+    &:nth-child(3) {
+      width: 65%;
+    }
+  }
+}

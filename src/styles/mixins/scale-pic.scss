@@ -1,0 +1,20 @@
+@mixin scale-pic($this, $name: pic) {
+  position: relative;
+
+  @media #{mq('md')} {
+    &:hover {
+      #{$this}__#{$name} {
+        transform: scale(1.05) rotate(0.02deg);
+      }
+    }
+  }
+
+  #{$this}__#{$name} {
+    // @include spread();
+
+    @media #{mq('md')} {
+      transform: scale(1) rotate(0.02deg);
+      transition: transform 1s cubic-bezier(0, 1, 0.5, 1);
+    }
+  }
+}

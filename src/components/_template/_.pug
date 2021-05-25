@@ -1,0 +1,7 @@
+include /components/ui/Container/Container
+
+mixin _()
+  - const B = `_`;
+
+  div(class=`${B}` id=`${B}`)&attributes(attributes)
+    +Container()(class=`${B}__container`)

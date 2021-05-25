@@ -1,0 +1,14 @@
+mixin Pic(folder, name, mqArr, fileType='jpg', alt='')
+  - const imagesPath = 'assets/images/'
+
+  if mqArr
+    picture.pic&attributes(attributes)
+      each mq in mqArr
+        source(
+            media=`(min-width:${mq}px)`
+            srcset=`${imagesPath}${folder}/${name}--${mq}.${fileType}`
+            type=`image/${fileType}`
+          )
+      img(src=`${imagesPath}${folder}/${name}.${fileType}` alt=`${alt}`)
+  else 
+    img(src=`${imagesPath}${folder}/${name}.${fileType}` alt=`${alt}`)&attributes(attributes)

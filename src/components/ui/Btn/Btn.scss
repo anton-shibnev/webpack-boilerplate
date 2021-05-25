@@ -1,0 +1,30 @@
+.btn {
+  @extend %btn-reset;
+  @extend %btn-label;
+
+  @include _(
+    (
+      padding: (
+        'mob': 12px 18px,
+      ),
+      display: flex,
+      align-items: center,
+      background-color: rgba($primary, 1),
+      color: $white,
+      transition: #{background-color $trs,
+      color $trs},
+      text-align: center,
+      border-radius: 999px,
+    )
+  );
+
+  &--light {
+    @include _(
+      (
+        background-color: rgba($primary, 0),
+        color: $primary,
+        border: 2px solid $primary,
+      )
+    );
+  }
+}

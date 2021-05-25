@@ -1,0 +1,22 @@
+.footer-soc {
+  $this: &;
+
+  @include flex-gap(
+    (
+      'mob': 30px,
+    )
+  );
+  justify-content: center;
+
+  &__item {
+    display: block;
+  }
+
+  &__item-icon {
+    @include svg-icon(50px);
+
+    * {
+      fill: $primary;
+    }
+  }
+}

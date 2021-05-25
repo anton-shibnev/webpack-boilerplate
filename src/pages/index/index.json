@@ -1,0 +1,64 @@
+{
+  "head": {
+    "title": "title - index",
+    "description": "description - index"
+  },
+  "header": {
+    "title": "header title",
+    "nav": [
+      {
+        "label": "О нас",
+        "href": "#"
+      },
+      {
+        "label": "Галерея",
+        "href": "#"
+      },
+      {
+        "label": "Каталог",
+        "href": "#"
+      },
+      {
+        "label": "События",
+        "href": "#"
+      },
+      {
+        "label": "Издания",
+        "href": "#"
+      },
+      {
+        "label": "Проекты",
+        "href": "#"
+      },
+      {
+        "label": "Контакты",
+        "href": "#"
+      }
+    ],
+    "btn": {
+      "label": "Войти",
+      "icon": "sign-in"
+    }
+  },
+  "footer": {
+    "socList": [
+      {
+        "href": "#",
+        "icon": "vk"
+      },
+      {
+        "href": "#",
+        "icon": "instagram"
+      },
+      {
+        "href": "#",
+        "icon": "facebook"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Hero Titlte",
+    "desc": "Hero desc",
+    "btn": "Hero Btn"
+  }
+}

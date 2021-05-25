@@ -1,0 +1,28 @@
+@mixin _set_flex-gap($gap) {
+  margin: -#{rem($gap)} 0 0 -#{rem($gap)};
+  width: calc(100% + #{rem($gap)});
+
+  > * {
+    margin-top: rem($gap);
+    margin-left: rem($gap);
+  }
+}
+
+@mixin flex-gap($gap) {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  @if (type-of($gap) == 'map') {
+    @each $bp-name, $val in $gap {
+      @if ($bp-name == 'mob') {
+        @include _set_flex-gap($val);
+      } @else {
+        @media #{mq($bp-name)} {
+          @include _set_flex-gap($val);
+        }
+      }
+    }
+  } @else {
+    @include _set_flex-gap($gap);
+  }
+}

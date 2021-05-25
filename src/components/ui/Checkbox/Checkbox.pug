@@ -1,0 +1,10 @@
+mixin Checkbox({name, id, label=true})
+  - const B = 'checkbox';
+
+  div(class=`${B}`)&attributes(attributes)
+    input(class=`${B}__input` type='checkbox' name=`${name}` id=`${id}`)
+    if (label)
+      label(class=`${B}__label` for=`${id}`)
+        div(class=`${B}__box`)
+          div(class=`${B}__box-icon`)
+        span(class=`${B}__content`) #{ label }

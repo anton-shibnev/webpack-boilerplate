@@ -1,0 +1,36 @@
+.input {
+  width: 100%;
+  &__input {
+    @include _(
+      (
+        height: (
+          'mob': 40px,
+        ),
+        font-size: (
+          'mob': 16px,
+        ),
+        line-hight: (
+          'mob': 32px,
+        ),
+        padding-left: (
+          'mob': 24px,
+        ),
+        padding-right: (
+          'mob': 24px,
+        ),
+        width: 100%,
+        border: 1px solid $dark,
+        border-radius: 999px,
+        transition: border-color $trs,
+      )
+    );
+
+    @include hover() {
+      border-color: $primary;
+    }
+
+    &::placeholder {
+      color: $grey;
+    }
+  }
+}

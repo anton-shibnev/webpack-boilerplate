@@ -1,0 +1,30 @@
+.header {
+  grid-area: header;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    $wh: (
+      'mob': 60px,
+      'xs': 100px,
+    );
+
+    @include _(
+      (
+        width: $wh,
+        height: $wh,
+      )
+    );
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__nav {
+    margin-left: auto;
+  }
+}

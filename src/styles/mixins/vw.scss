@@ -1,0 +1,9 @@
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function vw($val, $mq: 320px) {
+  $vw-context: strip-units($mq) * 0.01 * 1px;
+  @return $val / $vw-context * 1vw;
+  @return $val;
+}

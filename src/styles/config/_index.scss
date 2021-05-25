@@ -1,0 +1,21 @@
+// @import './colors.scss';
+// @import './breakpoints.scss';
+// @import './container-config.scss';
+// @import './typography.scss';
+
+$trs: 0.2s ease-in-out;
+
+$border-radius: 5px;
+
+$header-height: (
+  'mob': 45px,
+  'xs': 100px,
+);
+
+$gap: (
+  'mob': 16px,
+  'xs': 16px,
+  'lg': 24px,
+);
+
+// $z-index

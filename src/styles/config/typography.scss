@@ -1,0 +1,124 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+%h1,
+h1 {
+  @include _(
+    (
+      font-size: (
+        'mob': 32px,
+        'xs': 72px,
+      ),
+      line-height: (
+        'mob': 37px,
+        'xs': 82.8px,
+      ),
+      font-weight: bold,
+    )
+  );
+}
+
+%h2,
+h2 {
+  @include _(
+    (
+      font-size: (
+        'mob': 28px,
+      ),
+      line-height: (
+        'mob': 38px,
+      ),
+      font-weight: normal,
+    )
+  );
+}
+
+%h4,
+h4 {
+  @include _(
+    (
+      font-size: (
+        'mob': 24px,
+      ),
+      line-height: (
+        'mob': 33px,
+      ),
+      font-weight: 600,
+    )
+  );
+}
+
+%link {
+  @include _(
+    (
+      font-size: (
+        'mob': 18px,
+      ),
+      line-height: (
+        'mob': 24px,
+      ),
+      font-weight: (
+        'mob': normal,
+      ),
+    )
+  );
+}
+
+%p-1 {
+  @include _(
+    (
+      font-size: (
+        'mob': 12px,
+        'xs': 18px,
+      ),
+      line-height: (
+        'mob': 16px,
+        'xs': 30px,
+      ),
+      font-weight: (
+        'mob': normal,
+        'xs': bold,
+      ),
+    )
+  );
+}
+
+%p-2,
+p {
+  @include _(
+    (
+      font-size: (
+        'mob': 14px,
+      ),
+      line-height: (
+        'mob': 28px,
+      ),
+      font-weight: (
+        'mob': normal,
+      ),
+    )
+  );
+}
+
+%btn-label {
+  @include _(
+    (
+      font-size: (
+        'mob': 12px,
+      ),
+      line-height: (
+        'mob': 16px,
+      ),
+      font-weight: (
+        'mob': bold,
+      ),
+    )
+  );
+}

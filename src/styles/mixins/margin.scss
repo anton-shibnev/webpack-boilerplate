@@ -1,0 +1,37 @@
+@mixin margin-x($l, $r: $l) {
+  margin: {
+    left: $l;
+    right: $r;
+  }
+}
+
+@mixin margin-x-arr($arr) {
+  @each $bp-name, $val in $arr {
+    @if ($bp-name == 'mob') {
+      @include margin-x($val...);
+    } @else {
+      @media #{mq($bp-name)} {
+        @include margin-x($val...);
+      }
+    }
+  }
+}
+
+@mixin margin-y($t, $b: $t) {
+  margin: {
+    bottom: $b;
+    top: $t;
+  }
+}
+
+@mixin margin-y-arr($arr) {
+  @each $bp-name, $val in $arr {
+    @if ($bp-name == 'mob') {
+      @include margin-y($val...);
+    } @else {
+      @media #{mq($bp-name)} {
+        @include margin-y($val...);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@mixin circle($d) {
+  border-radius: 50%;
+
+  @if type-of($d) == 'map' {
+    @each $bp-name, $val in $d {
+      @if ($bp-name == 'mob') {
+        @include wh($val);
+      }
+
+      @else {
+        @media #{mq($bp-name)} {
+          @include wh($val);
+        }
+      }
+    }
+  }
+
+  @else {
+    @include wh($d);
+  }
+}
+

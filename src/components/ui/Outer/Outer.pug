@@ -1,0 +1,8 @@
+include /components/ui/Container/Container
+
+mixin Outer(className, id, is='section')
+  - const B = className;
+
+  #{is}(class=`${B}` id=`${B}`)&attributes(attributes)
+    +Container()(class=`${B}__container`)
+      block

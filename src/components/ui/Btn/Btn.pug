@@ -1,0 +1,3 @@
+mixin Btn(type=``, is='button')
+  #{is}(class=`btn ${type ? `btn--${type}`: ''}`)&attributes(attributes)
+    block

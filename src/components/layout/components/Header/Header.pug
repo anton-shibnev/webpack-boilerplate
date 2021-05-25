@@ -1,0 +1,17 @@
+include /components/ui/btn/btn
+include /components/ui/List/List
+//- include /components/ui/Container/Container
+include /components/ui/Outer/Outer
+include ../Logo/Logo
+include /components/ui/Burger/Burger
+
+mixin Header({ nav })
+  - const B = 'header';
+
+  +Outer(B,B, 'header')
+    +Icon('logo')(class=`${B}__logo`)
+
+    nav(class=`${B}__nav`)
+      +List(nav, 'ul', true)(class=`${B}__nav-list`)
+
+    +Burger('burger')(class=`${B}__burger`)

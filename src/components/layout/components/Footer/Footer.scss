@@ -1,0 +1,21 @@
+.footer {
+  grid-area: footer;
+
+  $padding-y: (
+    'mob': 20px,
+  );
+
+  @include _(
+    (
+      position: relative,
+      padding-top: $padding-y,
+      padding-bottom: $padding-y,
+    )
+  );
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

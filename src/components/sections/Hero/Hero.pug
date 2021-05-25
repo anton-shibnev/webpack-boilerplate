@@ -1,0 +1,11 @@
+include /components/ui/link/link
+include /components/ui/icon/icon
+include /components/ui/Btn/Btn
+include /components/ui/Outer/Outer
+
+mixin Hero(data)
+  - const B = 'hero'
+  +Outer(B, B, 'section')
+    h1(class=`${B}__title`) #{ data.title }
+    p(class=`${B}__desc`) #{ data.desc }
+    +Btn()(class=`${B}__btn`) #{ data.btn }

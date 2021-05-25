@@ -1,0 +1,17 @@
+.container,
+%container {
+  @include _(
+    (
+      padding-left: $container-padding,
+      padding-right: $container-padding,
+      margin-left: auto,
+      margin-right: auto,
+      position: relative,
+      width: 100%,
+      max-width: $container-mw +
+        (
+          map-get($container-padding, 'lg') * 2,
+        ),
+    )
+  );
+}

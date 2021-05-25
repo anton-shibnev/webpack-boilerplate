@@ -1,0 +1,13 @@
+include /components/ui/Icon/Icon
+
+mixin Accordion({label})
+  - const B = 'accordion';
+
+  div(class=`${B}`)&attributes(attributes)
+    button(class=`${B}__trigger`)
+      span(class=`${B}__label`) #{ label }
+      span(class=`${B}__circle`)
+        +Icon('arrow-down')(class=`${B}__circle-icon`)
+
+    div(class=`${B}__panel`)
+      block 

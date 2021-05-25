@@ -1,0 +1,4 @@
+mixin Burger(id, isActive=false)
+  button(class=`burger ${isActive ? 'burger--active': ''}` id=id)&attributes(attributes)
+    each _ in Array(3)
+      span.burger__line

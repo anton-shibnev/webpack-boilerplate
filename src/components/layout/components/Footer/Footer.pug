@@ -1,0 +1,10 @@
+include /components/ui/Container/Container
+include ./FooterSoc/FooterSoc
+include ../Logo/Logo
+
+mixin Footer({socList})
+  - const B = 'footer';
+  
+  footer(class=`${B}` id=`footer`)
+    +Container()(class=`${B}__container`)
+      +FooterSoc(socList)(class=`${B}__soc-list`)

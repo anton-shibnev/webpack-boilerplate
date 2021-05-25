@@ -1,0 +1,12 @@
+include ../Link/Link
+
+mixin List(arr = [], is = 'ul', withLink = false)
+  - const B = `list`;
+
+  #{is}(class=`${B}`)&attributes(attributes)
+    each item in arr
+      li(class=`${B}__item`)
+        if withLink
+          +Link(item)(class=`${B}__link`)
+        else
+          #{item}

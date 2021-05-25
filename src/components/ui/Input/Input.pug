@@ -1,0 +1,19 @@
+mixin Input(inputType='text', name, id, placeholder=false, label=false, required=true)
+  - const B = `input`;
+
+  div(class=`${B}`)&attributes(attributes)
+    if label
+      div(class=`${B}__wrap-label`)
+        label(class=`${B}__label` for=id) #{ label }
+    div(class=`${B}__wrap`)
+      input(
+          class=`${B}__input`
+          placeholder=placeholder
+          type=inputType
+          name=name
+          id=id
+          required=required
+        )
+      if (inputType === 'password')
+        button(type='button' class=`${B}__eye`)
+          //- include ../../static/svg/pass-eye.svg
