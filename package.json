@@ -42,7 +42,7 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "html-webpack-plugin": "^5.1.0",
-    "inline-media-scss": "^1.0.9",
+    "inline-media-scss": "^1.1.2",
     "mini-css-extract-plugin": "^1.3.6",
     "postcss": "^8.2.6",
     "postcss-loader": "^5.0.0",
