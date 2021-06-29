@@ -8,7 +8,7 @@ const { cssLoaders } = require('./util');
 
 // Configure Dev Server
 const configureDevServer = () => ({
-  contentBase: path.resolve(__dirname, '../src'),
+  contentBase: path.resolve(__dirname, '../'),
   port: 3000,
   liveReload: true,
   hot: true,
