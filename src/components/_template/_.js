@@ -1,9 +1,9 @@
-// import { Component } from '@/js/module/Component';
+import { Component } from '@/js/module/Component';
 
-// class _ extends Component {
-//   constructor(...props) {
-//     super(...props);
-//   }
-// }
+class _ extends Component {
+  constructor(...props) {
+    super(...props);
+  }
+}
 
 // new _({ className: '_' });
